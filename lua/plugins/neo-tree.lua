@@ -10,13 +10,12 @@ return {
   config = function()
     require('neo-tree').setup({
       filesystem = {
-        hijack_netrw_behavior = "open_current",
-        bind_to_cwd = true
       },
       window = {
-        position = "right",
+        position = "right"
       }
     })
     vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal right<CR>", {})
+    vim.keymap.set("n", "<leader>gs", ":Neotree git_status <CR>", {})
   end
 }
