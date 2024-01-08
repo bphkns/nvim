@@ -54,7 +54,7 @@ return {
       lspconfig.angularls.setup({
         cmd = ngls_cmd,
         capabilities = capabilities,
-        root_dir = util.root_pattern("angular.json"),
+        root_dir = util.root_pattern("angular.json", "project.json"),
         on_new_config = function(new_config)
           new_config.cmd = ngls_cmd
         end,
