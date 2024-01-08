@@ -26,26 +26,13 @@ return {
         capabilities = capabilities,
       })
 
-      -- local util = require('lspconfig.util')
-      -- local default_node_modules = vim.fn.getcwd() .. "/node_modules"
-      --
-      -- local ngls_cmd = {
-      --   "ngserver",
-      --   "--stdio",
-      --   "--tsProbeLocations",
-      --   default_node_modules,
-      --   "--ngProbeLocations",
-      --   default_node_modules,
-      --   "--experimental-ivy",
-      -- }
+      local util = require('lspconfig.util')
       lspconfig.angularls.setup({
-        -- cmd = ngls_cmd,
         capabilities = capabilities,
-        -- on_new_config = function(new_config)
-          -- new_config.cmd = ngls_cmd
-        -- end,
-      -- }, {
-        -- root_dir = util.root_pattern('angular.json', 'project.json')
+      }, {
+
+        root_dir = util.root_pattern('angular.json', 'project.json')
+
       })
       lspconfig.quick_lint_js.setup({
         capabilities = capabilities,
